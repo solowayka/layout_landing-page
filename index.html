@@ -18,42 +18,423 @@
     ></script>
   </head>
   <!-- #endregion -->
-  <body>
-    <header class="header">
+  <body class="page">
+    <header
+      class="header"
+      id="home"
+    >
       <div class="header__top">
-        <a href="#">
-          <img src="src/images/Met_header_logo.png" alt="Met header logo">
+        <a
+          href="#"
+          class="header__logo"
+          aria-label="The MET home"
+        >
+          <img
+            src="src/images/the-met-logo.png"
+            alt="the met logo"
+          />
         </a>
-        <a href="#" class="icon icon--the-met"></a>
-        <a href="#" class="icon icon--phone-call"></a>
-        <a href="#" class="icon icon--burger-menu"></a>
-      </div>
-      <div class="header__bottom">
-        <h1>Welcome<br>to The MET</h1>
+
+        <div class="header__actions">
+          <a
+            href="tel:+12125357710"
+            class="header__phone"
+            aria-label="Call The Met"
+          ></a>
+          <a
+            href="#menu"
+            class="header__menu"
+            aria-label="Open menu"
+          ></a>
+        </div>
       </div>
 
+      <div class="header__content">
+        <h1 class="header__title">
+          Welcome
+          <br />
+          to The MET
+        </h1>
+      </div>
     </header>
 
-    <aside></aside>
-    <main>
+    <aside
+      class="menu"
+      id="menu"
+      aria-label="Main menu"
+    >
+      <div class="menu__top">
+        <a
+          href="#"
+          class="header__logo"
+          aria-label="The MET home"
+        >
+          <img
+            src="src/images/the-met-logo.png"
+            alt="the met logo"
+          />
+        </a>
+        <a
+          href="#"
+          class="menu__close"
+          aria-label="Close menu"
+        ></a>
+      </div>
 
-      <section>
-        <h2>Museum hours</h2>
-      </section>
+      <nav
+        class="menu__nav"
+        aria-label="Main navigation"
+      >
+        <ul class="menu__list">
+          <li>
+            <a
+              class="menu__link"
+              href="#home"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              class="menu__link"
+              href="#about-us"
+            >
+              About us
+            </a>
+          </li>
+          <li>
+            <a
+              class="menu__link"
+              href="#gallery"
+            >
+              Gallery
+            </a>
+          </li>
+          <li>
+            <a
+              class="menu__link"
+              href="#explore-online"
+            >
+              Explore online
+            </a>
+          </li>
+          <li>
+            <a
+              class="menu__link"
+              href="#contacts"
+            >
+              Contacts
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-      <section>
-        <h2>Now On View</h2>
-      </section>
+      <div class="menu__contacts">
+        <div>
+          <p class="contacts__title">The Met Fifth Avenue</p>
+          <a
+            href="tel:+12125357710"
+            class="menu__phone"
+          >
+            +1 212-535-7710
+          </a>
+        </div>
 
-      <section>
-        <h2>More to Explore Online</h2>
-      </section>
+        <div>
+          <p class="contacts__title">The Met Cloisters</p>
+          <a
+            href="tel:+12129233700"
+            class="menu__phone"
+          >
+            +1 212-923-3700
+          </a>
+        </div>
 
+        <a
+          href="tel:+12125357710"
+          class="menu__call"
+        >
+          Call to order
+        </a>
+      </div>
+    </aside>
+
+    <main
+      class="main"
+      id="about-us"
+    >
+      <div class="container">
+        <section
+          class="section hours"
+          aria-labelledby="hours-title"
+        >
+          <div>
+            <span class="section__label">Plan your visit</span>
+            <h2
+              class="section__title"
+              id="hours-title"
+            >
+              Museum hours
+            </h2>
+          </div>
+
+          <div class="hours__list">
+            <h3>The Met Fifth Avenue</h3>
+            <div class="hours__item">
+              <div class="hours__time">10:00 AM - 5:00 PM</div>
+              <div class="hours__day">Sun, Mon, Tue, Thu</div>
+            </div>
+            <div class="hours__item">
+              <div class="hours__time">10:00 AM - 9:00 PM</div>
+              <div class="hours__day">Fri, Sat</div>
+            </div>
+            <div class="hours__item">
+              <div class="hours__day">Closed</div>
+              <div class="hours__closed">Wen</div>
+              <div class="hours__day">Closed on</div>
+              <div class="hours__closed">
+                Thanksgiving Day, Dec 25, Jan 1, and the first Monday in May.
+              </div>
+            </div>
+            <h3>The Met Cloisters</h3>
+            <div class="hours__item">
+              <div class="hours__time">10:00 AM - 4:30 PM</div>
+              <div class="hours__day">Thu - Tue</div>
+            </div>
+            <div class="hours__item">
+              <div class="hours__day">Closed</div>
+              <div class="hours__closed">Wen</div>
+              <div class="hours__day">Closed on</div>
+              <div class="hours__closed">
+                Thanksgiving Day, Dec 25, Jan 1
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="section gallery"
+          id="gallery"
+          aria-labelledby="gallery-title"
+        >
+          <div>
+            <h2
+              class="section__title"
+              id="gallery-title"
+            >
+              Now on view
+            </h2>
+            <span>Explore exhibition gallery guides, videos, articles, and more.</span>
+          </div>
+
+          <div class="gallery__grid">
+            <a
+              href="#"
+              class="gallery__card gallery__card--wide"
+            >
+              <img
+                src="src/images/GalleryPhotos 1.png"
+                alt="A New Look at Old Masters"
+              />
+            </a>
+            <a
+              href="#"
+              class="gallery__card gallery__card--wide"
+            >
+              <img
+                src="src/images/GalleryPhotos 2.png"
+                alt="Old masters collection"
+              />
+            </a>
+            <a
+              href="#"
+              class="gallery__card gallery__card--wide"
+            >
+              <img
+                src="src/images/GalleryPhotos 3.png"
+                alt="Artists in motion"
+              />
+            </a>
+          </div>
+          <img
+                src="src/images/Secondary_button.png"
+                alt="Secondary button"
+              />
+        </section>
+
+        <section
+          class="section explore"
+          id="explore-online"
+          aria-labelledby="explore-title"
+        >
+          <div>
+            <h2
+              class="section__title"
+              id="explore-title"
+            >
+              More to explore online
+            </h2>
+          </div>
+
+          <div class="explore__list">
+            <article class="explore__item">
+              <a
+                href="#"
+                class="explore__image"
+              >
+                <img
+                  src="src/images/Layer 51@1,5x.png"
+                  alt="Collection areas"
+                />
+              </a>
+              <h3 class="explore__title">Collection areas</h3>
+              <p class="explore__text">
+                These collection areas study, exhibit, and care for the objects in The Met collection.
+              </p>
+            </article>
+
+            <article class="explore__item">
+              <a
+                href="#"
+                class="explore__image"
+              >
+                <img
+                  src="src/images/Person 2.png"
+                  alt="Travel"
+                />
+              </a>
+              <h3 class="explore__title">Travel</h3>
+              <p class="explore__text">
+                Travel with The Met connects the Museum's wide and diverse audience to art,
+                inspiration, and historical perspective.
+              </p>
+            </article>
+
+            <article class="explore__item">
+              <a
+                href="#"
+                class="explore__image"
+              >
+                <img
+                  src="src/images/Person 3.png"
+                  alt="Virtual group tours"
+                />
+              </a>
+              <h3 class="explore__title">Virtual group tours</h3>
+              <p class="explore__text">
+                 Request a guided tour, reserve admission and lead your own small group,
+                 or request a live virtual tour led by a Museum guide.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section
+          class="section contacts"
+          id="contacts"
+          aria-labelledby="contacts-title"
+        >
+          <div>
+            <h2
+              class="section__title"
+              id="contacts-title"
+            >
+              Contact us
+            </h2>
+          </div>
+
+          <div class="contacts__grid">
+            <div>
+              <h3 class="contacts__title">The Met Fifth Avenue</h3>
+              <span>Phone</span>
+              <a
+                href="tel:+12125357710"
+                class="contacts__link"
+              >
+                +1 212-535-7710
+              </a>
+              <span>Address</span>
+              <a
+                href="https://maps.google.com/?q=1000+Fifth+Avenue+New+York+NY+10028"
+                class="contacts__link"
+                target="_blank"
+                rel="noreferrer"
+              >
+                1000 Fifth Avenue, New York, NY 10028
+              </a>
+            </div>
+
+            <div>
+              <h3 class="contacts__title">The Met Cloisters</h3>
+              <span>Phone</span>
+              <a
+                href="tel:+12129233700"
+                class="contacts__link"
+              >
+                +1 212-923-3700
+              </a>
+              <span>Address</span>
+              <a
+                href="https://maps.google.com/?q=99+Margaret+Corbin+Drive+New+York+NY+10040"
+                class="contacts__link"
+                target="_blank"
+                rel="noreferrer"
+              >
+                99 Margaret Corbin Drive, New York, NY 10040
+              </a>
+            </div>
+
+            <section
+              class="section contact-form"
+              aria-labelledby="contact-form-title"
+            >
+              <form
+                class="form"
+                action="#"
+                method="post"
+              >
+                <label class="form__label">
+                  <input
+                    type="text"
+                    name="name"
+                    class="form__input"
+                    required
+                  />
+                </label>
+
+                <label class="form__label">
+                  <input
+                    type="email"
+                    name="email"
+                    class="form__input"
+                    required
+                  />
+                </label>
+
+                <label class="form__label">
+                  <textarea
+                    name="message"
+                    class="form__textarea"
+                    required
+                  ></textarea>
+                </label>
+
+                <button
+                  type="submit"
+                  class="form__submit"
+                >
+                  Send
+                </button>
+              </form>
+            </section>
+          </div>
+        </section>
+      </div>
     </main>
 
-    <footer>
-
-    </footer>
-
+    <footer
+      class="footer"
+      aria-label="Museum footer"
+    ></footer>
   </body>
 </html>

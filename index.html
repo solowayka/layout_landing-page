@@ -176,7 +176,7 @@
           <div class="section__museum">
             <span class="section__visit">Plan your visit</span>
             <h2
-              class="section__title"
+              class="section__title--museum"
               id="hours-title"
             >
               Museum hours
@@ -187,8 +187,8 @@
             <h3>The Met Fifth Avenue</h3>
             <div class="hours__item">
               <div class="hours__item--times">
-                <div class="hours__time">10:00 AM - 5:00 PM</div>
-                <div class="hours__time">10:00 AM - 9:00 PM</div>
+                <div class="hours__time">10 am - 5 pm</div>
+                <div class="hours__time">10 am - 9 pm</div>
                 <div class="hours__time">Closed</div>
               </div>
               <div class="hours__item--days">
@@ -197,7 +197,7 @@
                 <div class="hours__day">Wen</div>
               </div>
             </div>
-            <div class="hours__item">
+            <div class="hours__item--closed">
               <div class="hours__closed">Closed on</div>
               <div class="hours__day">
                 Thanksgiving Day, Dec 25, Jan 1, and the first Monday in May.
@@ -206,7 +206,7 @@
             <h3>The Met Cloisters</h3>
             <div class="hours__item">
               <div class="hours__item--times">
-                <div class="hours__time">10:00 AM - 4:30 PM</div>
+                <div class="hours__time">10 am - 4.30 pm</div>
                 <div class="hours__time">Closed</div>
               </div>
               <div class="hours__item--days">
@@ -214,7 +214,7 @@
                 <div class="hours__day">Wen</div>
               </div>
             </div>
-            <div class="hours__item">
+            <div class="hours__item--closed">
               <div class="hours__closed">Closed on</div>
               <div class="hours__day">Thanksgiving Day, Dec 25, Jan 1</div>
             </div>
@@ -233,9 +233,12 @@
             >
               Now on view
             </h2>
-            <span>
-              Explore exhibition gallery guides, videos, articles, and more.
-            </span>
+            <div class="hours__day--view">
+              Explore exhibition gallery guides,
+            </div>
+            <div class="hours__day--view">
+              videos, articles, and more.
+            </div>
           </div>
 
           <div class="gallery__grid">
@@ -267,7 +270,7 @@
               />
             </a>
           </div>
-          <img
+          <img class="gallery__button"
             src="src/images/Secondary_button.png"
             alt="Secondary button"
           />
@@ -294,7 +297,7 @@
                 class="explore__image"
               >
                 <img
-                  src="src/images/Layer 51@1,5x.png"
+                  src="src/images/Layer 51@1,5x (1).png"
                   alt="Collection areas"
                 />
               </a>
@@ -311,7 +314,7 @@
                 class="explore__image"
               >
                 <img
-                  src="src/images/Person 2.png"
+                  src="src/images/Layer 51@1,5x (2).png"
                   alt="Travel"
                 />
               </a>
@@ -328,7 +331,7 @@
                 class="explore__image"
               >
                 <img
-                  src="src/images/Person 3.png"
+                  src="src/images/Layer 51@1,5x (3).png"
                   alt="Virtual group tours"
                 />
               </a>
@@ -372,7 +375,8 @@
                 target="_blank"
                 rel="noreferrer"
               >
-                1000 Fifth Avenue, New York, NY 10028
+                1000 Fifth Avenue<br>
+                New York, NY 10028
               </a>
             </div>
 
@@ -392,7 +396,9 @@
                 target="_blank"
                 rel="noreferrer"
               >
-                99 Margaret Corbin Drive, New York, NY 10040
+                99 Margaret Corbin Drive<br>
+                Fort Tryon Park<br>
+                New York, NY 10040
               </a>
             </div>
 
@@ -411,7 +417,7 @@
                     type="text"
                     name="name"
                     class="form__input"
-                    placeholder="Your name"
+                    placeholder="Name"
                     required
                   />
                 </label>
@@ -421,7 +427,7 @@
                     type="email"
                     name="email"
                     class="form__input"
-                    placeholder="Your email"
+                    placeholder="Email"
                     required
                   />
                 </label>
@@ -430,7 +436,7 @@
                   <textarea
                     name="message"
                     class="form__textarea"
-                    placeholder="Your message"
+                    placeholder="Message"
                     required
                   ></textarea>
                 </label>

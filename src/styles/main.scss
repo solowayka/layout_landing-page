@@ -171,39 +171,57 @@ textarea {
 }
 
 .section__museum {
-  grid-column: 1 / span 4;
+  grid-column: 1 / span 5;
   display: grid;
   gap: 2px;
+  height: 67px;
 }
 
 .section__visit {
-  display: inline-block;
+
   font-size: 12px;
   line-height: 140%;
   color: $accent;
   font-weight: 700;
-  text-transform: uppercase;
+  font-style: bold;
 }
 
 .section__title {
+  justify-self: center;
   font-weight: 700;
+  font-style: bold;
   font-size: clamp(2.2rem, 4vw, 3rem);
-  line-height: 1;
+  line-height: 48px;
+  letter-spacing: -0.05em;
+}
+
+.section__title--museum {
+  font-weight: 700;
+  font-style: bold;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  line-height: 48px;
   letter-spacing: -0.05em;
 }
 
 .hours__list {
-  grid-column: 5 / -1;
+  grid-column: 6 / -2;
 }
 
 .hours__item {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 24px;
   margin-top: 12px;
+  width: 333px;
 }
 
 .hours__item--times {
+  display: grid;
+
+  width: 120px;
+  gap: 8px;
+}
+.hours__item--days {
   display: grid;
   gap: 8px;
 }
@@ -211,43 +229,62 @@ textarea {
 .hours__day,
 .hours__time,
 .hours__closed {
+  color: $black;
+  font-weight: 400;
   font-size: 16px;
   line-height: 27px;
 }
 
+.hours__day--view {
+  letter-spacing: 0px;
+  justify-self: center;
+}
+
 .hours__time,
 .hours__closed {
-  color: $black;
+  letter-spacing: 0px;
   font-weight: 700;
+  font-style: bold;
 }
 
-.hours__day {
-  color: $black;
-  font-weight: 400;
-}
-
-.hours__note {
-  display: block;
-  margin-top: 12px;
-  color: $black;
-  font-weight: 700;
+.hours__item--closed {
+  width: 516px;
+  margin-top: 16px;
+  margin-bottom: 24px;
 }
 
 .gallery {
   display: grid;
-  gap: 24px;
+  gap: 48px;
 }
 
 .gallery__grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 24px;
+  gap: 48px;
 }
 
 .gallery__card {
   overflow: hidden;
   border-radius: 14px;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.gallery__button {
+  display: block;
+  margin: 0 auto;
+  width: 324px;
+  height: 56px;
+  // background: url('../images/Secondary_button.png') center/contain no-repeat;
+  transition:
+    transform $transition,
+    filter $transition;
+}
+
+.gallery__button:hover,
+.gallery__button:focus-visible {
+  transform: scale(1.02);
+  filter: brightness(1.08);
 }
 
 .gallery__card img,
@@ -259,7 +296,7 @@ textarea {
 }
 
 .gallery__card--wide {
-  grid-column: span 6;
+  grid-column: 1 / -1;
   min-height: 260px;
 }
 
@@ -277,7 +314,7 @@ textarea {
 
 .gallery__card:hover img,
 .gallery__card:focus-within img {
-  transform: scale(1.04);
+  transform: scale(0.99);
 }
 
 .explore {
@@ -293,14 +330,16 @@ textarea {
 
 .explore__item {
   display: grid;
-  gap: 14px;
+  gap: 24px;
   grid-column: span 4;
 }
 
 .explore__image {
-  height: 240px;
-  overflow: hidden;
-  border-radius: 12px;
+  height: 320px;
+  background-image: fit cover;
+  // overflow: hidden;
+
+  // border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
@@ -310,6 +349,7 @@ textarea {
 }
 
 .explore__title {
+  justify-self: center;
   font-weight: 700;
   line-height: 140%;
   font-size: 24px;
@@ -329,16 +369,19 @@ textarea {
 .contacts__grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 28px;
+  gap: 24px;
 }
 
 .contacts__grid > div {
-  grid-column: span 4;
+  grid-column: span 3;
 }
 
 .contacts__title {
+  font-weight: 700;
+  font-style: bold;
+  line-height: 27px;
   margin-bottom: 12px;
-  font-size: 1.2rem;
+  font-size: 16px;
 }
 
 .contacts__link,
@@ -346,10 +389,13 @@ textarea {
   display: block;
   color: $black;
   font-size: 1rem;
+
 }
 
 .contacts__link {
   text-decoration: none;
+  font-weight: 700;
+  font-style: bold;
 }
 
 .contacts__link:hover,
@@ -358,7 +404,8 @@ textarea {
 }
 
 .contact-form {
-  grid-column: 9 / span 4;
+  grid-column: 8 / -1;
+  width: 411px;
 }
 
 .form {
@@ -374,7 +421,8 @@ textarea {
 .form__textarea {
   width: 100%;
   border: 1px solid #d3d3d3;
-  border-radius: 8px;
+
+  // border-radius: 8px;
   background: $white;
   color: $black;
   padding: 14px 16px;
@@ -391,10 +439,10 @@ textarea {
 }
 
 .form__submit {
-  justify-self: start;
   padding: 14px 24px;
   border: none;
-  border-radius: 8px;
+
+  // border-radius: 8px;
   background: $accent;
   color: $white;
   font-weight: 700;

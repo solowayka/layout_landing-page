@@ -9,6 +9,11 @@
     />
     <title>The MET</title>
     <link
+      rel="icon"
+      href="src/images/the-met-logo.png"
+      type="image/png"
+    />
+    <link
       rel="stylesheet"
       href="src/styles/main.scss"
     />
@@ -165,11 +170,11 @@
     >
       <div class="container">
         <section
-          class="section hours"
+          class="section__hours"
           aria-labelledby="hours-title"
         >
-          <div>
-            <span class="section__label">Plan your visit</span>
+          <div class="section__museum">
+            <span class="section__visit">Plan your visit</span>
             <h2
               class="section__title"
               id="hours-title"
@@ -181,33 +186,37 @@
           <div class="hours__list">
             <h3>The Met Fifth Avenue</h3>
             <div class="hours__item">
-              <div class="hours__time">10:00 AM - 5:00 PM</div>
-              <div class="hours__day">Sun, Mon, Tue, Thu</div>
+              <div class="hours__item--times">
+                <div class="hours__time">10:00 AM - 5:00 PM</div>
+                <div class="hours__time">10:00 AM - 9:00 PM</div>
+                <div class="hours__time">Closed</div>
+              </div>
+              <div class="hours__item--days">
+                <div class="hours__day">Sun, Mon, Tue, Thu</div>
+                <div class="hours__day">Fri, Sat</div>
+                <div class="hours__day">Wen</div>
+              </div>
             </div>
             <div class="hours__item">
-              <div class="hours__time">10:00 AM - 9:00 PM</div>
-              <div class="hours__day">Fri, Sat</div>
-            </div>
-            <div class="hours__item">
-              <div class="hours__day">Closed</div>
-              <div class="hours__closed">Wen</div>
-              <div class="hours__day">Closed on</div>
-              <div class="hours__closed">
+              <div class="hours__closed">Closed on</div>
+              <div class="hours__day">
                 Thanksgiving Day, Dec 25, Jan 1, and the first Monday in May.
               </div>
             </div>
             <h3>The Met Cloisters</h3>
             <div class="hours__item">
-              <div class="hours__time">10:00 AM - 4:30 PM</div>
-              <div class="hours__day">Thu - Tue</div>
+              <div class="hours__item--times">
+                <div class="hours__time">10:00 AM - 4:30 PM</div>
+                <div class="hours__time">Closed</div>
+              </div>
+              <div class="hours__item--days">
+                <div class="hours__day">Thu - Tue</div>
+                <div class="hours__day">Wen</div>
+              </div>
             </div>
             <div class="hours__item">
-              <div class="hours__day">Closed</div>
-              <div class="hours__closed">Wen</div>
-              <div class="hours__day">Closed on</div>
-              <div class="hours__closed">
-                Thanksgiving Day, Dec 25, Jan 1
-              </div>
+              <div class="hours__closed">Closed on</div>
+              <div class="hours__day">Thanksgiving Day, Dec 25, Jan 1</div>
             </div>
           </div>
         </section>
@@ -224,7 +233,9 @@
             >
               Now on view
             </h2>
-            <span>Explore exhibition gallery guides, videos, articles, and more.</span>
+            <span>
+              Explore exhibition gallery guides, videos, articles, and more.
+            </span>
           </div>
 
           <div class="gallery__grid">
@@ -257,9 +268,9 @@
             </a>
           </div>
           <img
-                src="src/images/Secondary_button.png"
-                alt="Secondary button"
-              />
+            src="src/images/Secondary_button.png"
+            alt="Secondary button"
+          />
         </section>
 
         <section
@@ -289,7 +300,8 @@
               </a>
               <h3 class="explore__title">Collection areas</h3>
               <p class="explore__text">
-                These collection areas study, exhibit, and care for the objects in The Met collection.
+                These collection areas study, exhibit, and care for the objects
+                in The Met collection.
               </p>
             </article>
 
@@ -305,8 +317,8 @@
               </a>
               <h3 class="explore__title">Travel</h3>
               <p class="explore__text">
-                Travel with The Met connects the Museum's wide and diverse audience to art,
-                inspiration, and historical perspective.
+                Travel with The Met connects the Museum's wide and diverse
+                audience to art, inspiration, and historical perspective.
               </p>
             </article>
 
@@ -322,8 +334,8 @@
               </a>
               <h3 class="explore__title">Virtual group tours</h3>
               <p class="explore__text">
-                 Request a guided tour, reserve admission and lead your own small group,
-                 or request a live virtual tour led by a Museum guide.
+                Request a guided tour, reserve admission and lead your own small
+                group, or request a live virtual tour led by a Museum guide.
               </p>
             </article>
           </div>
@@ -392,12 +404,14 @@
                 class="form"
                 action="#"
                 method="post"
+                onsubmit="this.reset(); return false;"
               >
                 <label class="form__label">
                   <input
                     type="text"
                     name="name"
                     class="form__input"
+                    placeholder="Your name"
                     required
                   />
                 </label>
@@ -407,6 +421,7 @@
                     type="email"
                     name="email"
                     class="form__input"
+                    placeholder="Your email"
                     required
                   />
                 </label>
@@ -415,6 +430,7 @@
                   <textarea
                     name="message"
                     class="form__textarea"
+                    placeholder="Your message"
                     required
                   ></textarea>
                 </label>

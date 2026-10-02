@@ -3,9 +3,10 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: $max-width;
+  width: 100%;
+  max-width: $max-width;
   height: 100%;
-  padding: 32px 120px 106px 121px;
+  padding: 32px 120px 106px;
   background: $accent;
   color: $white;
   z-index: 30;
@@ -21,6 +22,7 @@
     position: sticky;
     top: 0;
     z-index: 1;
+    padding: 12px 0;
 
     @include flex-center(space-between, center);
 
@@ -69,6 +71,11 @@
       background: $pressed;
       opacity: 0.8;
     }
+
+    &:active {
+      background: $pressed;
+      transform: translateX(2px);
+    }
   }
 
   &__contacts {
@@ -86,6 +93,7 @@
     &:hover,
     &:focus-visible {
       color: rgba(255, 255, 255, 0.8);
+      transform: translateX(4px);
     }
   }
 
@@ -100,6 +108,12 @@
     text-transform: uppercase;
     color: $white;
   }
+
+  &__call:hover,
+  &__call:focus-visible {
+    color: rgba(255,255,255,0.8);
+  }
+
 }
 
 @include media-mobile {

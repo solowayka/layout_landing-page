@@ -170,7 +170,7 @@
     >
       <div class="container">
         <section
-          class="section__hours"
+          class="section section--hours"
           aria-labelledby="hours-title"
         >
           <div class="section__museum">
@@ -222,7 +222,7 @@
         </section>
 
         <section
-          class="section gallery"
+          class="section section--gallery"
           id="gallery"
           aria-labelledby="gallery-title"
         >
@@ -233,18 +233,18 @@
             >
               Now on view
             </h2>
-            <div class="hours__day--view">
+            <p class="gallery__subtitle">
               Explore exhibition gallery guides,
-            </div>
-            <div class="hours__day--view">
+            </p>
+            <p class="gallery__subtitle">
               videos, articles, and more.
-            </div>
+            </p>
           </div>
 
           <div class="gallery__grid">
             <a
               href="#"
-              class="gallery__card gallery__card--wide"
+              class="gallery__card gallery__card--full"
             >
               <img
                 src="src/images/GalleryPhotos 1.png"
@@ -253,7 +253,7 @@
             </a>
             <a
               href="#"
-              class="gallery__card gallery__card--wide"
+              class="gallery__card gallery__card--full"
             >
               <img
                 src="src/images/GalleryPhotos 2.png"
@@ -262,7 +262,7 @@
             </a>
             <a
               href="#"
-              class="gallery__card gallery__card--wide"
+              class="gallery__card gallery__card--full"
             >
               <img
                 src="src/images/GalleryPhotos 3.png"
@@ -270,14 +270,16 @@
               />
             </a>
           </div>
-          <img class="gallery__button"
-            src="src/images/Secondary_button.png"
-            alt="Secondary button"
-          />
+          <button class="gallery__button">
+            <img
+              src="src/images/Secondary_button.png"
+              alt="Secondary button"
+            />
+          </button>
         </section>
 
         <section
-          class="section explore"
+          class="section section--explore"
           id="explore-online"
           aria-labelledby="explore-title"
         >
@@ -315,7 +317,7 @@
               >
                 <img
                   src="src/images/Layer 51@1,5x (2).png"
-                  alt="Travel"
+                  alt="History and culture"
                 />
               </a>
               <h3 class="explore__title">Travel</h3>
@@ -345,7 +347,7 @@
         </section>
 
         <section
-          class="section contacts"
+          class="section section--contacts"
           id="contacts"
           aria-labelledby="contacts-title"
         >
@@ -361,50 +363,55 @@
           <div class="contacts__grid">
             <div>
               <h3 class="contacts__title">The Met Fifth Avenue</h3>
-              <span>Phone</span>
+              <p class="contacts__label">Phone</p>
               <a
                 href="tel:+12125357710"
                 class="contacts__link"
               >
                 +1 212-535-7710
               </a>
-              <span>Address</span>
+              <p class="contacts__label">Address</p>
               <a
                 href="https://maps.google.com/?q=1000+Fifth+Avenue+New+York+NY+10028"
                 class="contacts__link"
                 target="_blank"
                 rel="noreferrer"
               >
-                1000 Fifth Avenue<br>
-                New York, NY 10028
+                <address class="contacts__address">
+                  1000 Fifth Avenue<br />
+                  New York, NY 10028
+                </address>
+
               </a>
             </div>
 
             <div>
               <h3 class="contacts__title">The Met Cloisters</h3>
-              <span>Phone</span>
+              <p class="contacts__label">Phone</p>
               <a
                 href="tel:+12129233700"
                 class="contacts__link"
               >
                 +1 212-923-3700
               </a>
-              <span>Address</span>
+              <p class="contacts__label">Address</p>
               <a
                 href="https://maps.google.com/?q=99+Margaret+Corbin+Drive+New+York+NY+10040"
                 class="contacts__link"
                 target="_blank"
                 rel="noreferrer"
               >
-                99 Margaret Corbin Drive<br>
-                Fort Tryon Park<br>
-                New York, NY 10040
+                <address class="contacts__address">
+                  99 Margaret Corbin Drive<br>
+                  Fort Tryon Park<br>
+                  New York, NY 10040
+                </address>
               </a>
             </div>
 
-            <section
+            <div
               class="section contact-form"
-              aria-labelledby="contact-form-title"
+              id="contact-form-title"
             >
               <form
                 class="form"
@@ -448,7 +455,7 @@
                   Send
                 </button>
               </form>
-            </section>
+            </div>
           </div>
         </section>
       </div>

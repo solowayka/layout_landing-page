@@ -9,6 +9,17 @@
 
 html {
   scroll-behavior: smooth;
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+    box-shadow: 0 0 0 1000px #fff inset !important;
+    -webkit-text-fill-color: #000 !important;
+  }
+
 }
 
 body {
@@ -18,6 +29,7 @@ body {
   background: $bg-light;
   color: $black;
   line-height: 1.5;
+  padding-bottom: 80px;
 }
 
 p,
@@ -67,17 +79,6 @@ textarea {
   padding: 25px 20px 0;
 }
 
-@media (min-width: 768px) {
-  .header {
-    padding: 50px 70px 0;
-  }
-}
-
-@media (min-width: 1024px) {
-  .header {
-    padding: 50px 120px 0;
-  }
-}
 
 .header__top {
   display: flex;
@@ -164,15 +165,65 @@ textarea {
   text-align: center;
 }
 
+@media (min-width: 768px) {
+  .header {
+    padding: 50px 70px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .header {
+    padding: 50px 120px 0;
+  }
+
+  .header__actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .header__contact--preview {
+    position: absolute;
+    right: 218px;
+    display: none;
+    padding: 0;
+  }
+
+  .header__phone:hover + .header__contact--preview {
+    display: block;
+  }
+
+  .header__contact-title,
+  .header__contact-phone {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 27px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 18px 4px 26px rgba(0, 0, 0, 0.44);
+    display: block;
+    justify-self: right;
+    text-decoration: none;
+  }
+
+  .header__contact-phone:hover {
+    opacity: 0.85;
+  }
+}
+
 /* CONTAINER */
 .container {
   width: calc(100% - 40px);
-  margin: 100px auto 0;
+  padding: 100px 20px 0;
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
   .container {
     width: calc(100% - 32px);
+    padding: 140px 72px 0;
+    margin: 0 auto;
   }
 }
 
@@ -192,7 +243,6 @@ textarea {
 }
 
 .section__museum {
-  // display: grid;
   gap: 2px;
 }
 
@@ -274,11 +324,6 @@ textarea {
 
 /* GALLERY */
 
-.section--gallery {
-  display: grid;
-  gap: 48px;
-}
-
 .gallery__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -293,56 +338,62 @@ textarea {
 }
 
 .gallery__card {
-  overflow: hidden;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
-  min-height: 130px;
+  margin-top: 48px;
+
+  &:hover,
+  &:focus-within {
+    transform: scale(1.05);
+  }
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-
-  // &:hover img,
-  // &:focus-within img {
-  //   transform: scale(0.99);
-  // }
 }
 
-.gallery__card--wide {
-  min-height: 260px;
+.gallery__info {
+  grid-column: 1 / -1;
 }
 
-.gallery__card--tall {
-  min-height: 460px;
+// .gallery__card--wide {
+//   height: 280px;
+// }
+
+.gallery__card--wide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.gallery__card-title {
+
+.gallery__info-title {
+  display: inline;
   font-weight: 700;
   font-style: bold;
   font-size: 16px;
   line-height: 27px;
   color: $accent;
-  text-align: center;
 }
 
-.gallery__card-text {
-  height: 27px;
+.gallery__info-text {
+  display: inline;
   font-weight: 400;
   font-size: 16px;
   line-height: 27px;
   color: $black;
-  text-align: center;
 }
 
 .gallery__button {
   display: block;
   margin: 0 auto;
   background: $accent;
-  color: $black;
+  color: $white;
   border: none;
   width: 324px;
   height: 56px;
+  margin-top: 50px;
   margin-bottom: 100px;
   transition:
     transform $transition,
@@ -354,11 +405,23 @@ textarea {
 .gallery__button:focus-visible {
   transform: scale(1.02);
   filter: brightness(1.08);
+  background: $hover;
 }
 
 @media (min-width: 768px) {
   .gallery__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .gallery__card {
+    grid-column: span 2;
+  }
+
+  .gallery__card--wide {
+    grid-column: span 6;
+  }
+
+  .gallery__info {
+    grid-column: 1 / -1;
   }
 }
 
@@ -368,15 +431,15 @@ textarea {
   }
 
   .gallery__card {
-    grid-column: span 3;
+    grid-column: span 4;
   }
 
   .gallery__card--wide {
-    grid-column: span 12;
+    grid-column: span 8;
   }
 
-  .gallery__card--tall {
-    grid-column: span 6;
+  .gallery__info {
+    grid-column: 1 / -1;
   }
 }
 
@@ -472,7 +535,6 @@ textarea {
 
 .contacts__label {
   font-size: 14px;
-  color: $muted;
 }
 
 .contacts__link {
@@ -481,6 +543,7 @@ textarea {
   text-decoration: none;
   font-weight: 700;
   font-style: bold;
+  margin-bottom: 12px;
 
   &:focus-visible &:hover {
     color: $accent;
@@ -505,13 +568,10 @@ textarea {
   padding: 14px 16px;
 }
 
-.form__input::placeholder,
-.form__textarea::placeholder {
-  color: $muted;
-}
 
 .form__textarea {
   min-height: 144px;
+  resize: none;
 }
 
 .form__submit {
@@ -531,6 +591,7 @@ textarea {
 @media (min-width: 768px) {
   .contacts__grid {
     grid-template-columns: repeat(2, 1fr);
+    align-items: start;
   }
 
   .contact-form {
@@ -541,10 +602,11 @@ textarea {
 @media (min-width: 1024px) {
   .contacts__grid {
     grid-template-columns: repeat(12, 1fr);
+    align-items: start;
   }
 
   .contacts__grid > div {
-    grid-column: span 3;
+    grid-column: span 4;
   }
 
   .contact-form {
@@ -553,48 +615,16 @@ textarea {
   }
 }
 
-/* FOOTER — static */
+/* FOOTER  */
 .footer {
+  position: fixed;
   height: 180px;
+  width: 100%;
   background:
     linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
     url('../images/footer-bg.png') center/cover no-repeat;
-
+  z-index: -1;
   bottom: 0;
 }
 
-@media (min-width: 1024px) {
-  .header__actions {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-  }
 
-  .header__contact--preview {
-    position: absolute;
-    right: 218px;
-    display: none;
-    padding: 0;
-  }
-
-  .header__phone:hover + .header__contact--preview {
-    display: block;
-  }
-
-  .header__contact-title,
-  .header__contact-phone {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 27px;
-    text-transform: uppercase;
-    color: #fff;
-    text-shadow: 18px 4px 26px rgba(0, 0, 0, 0.44);
-    display: block;
-    justify-self: right;
-    text-decoration: none;
-  }
-
-  .header__contact-phone:hover {
-    opacity: 0.85;
-  }
-}

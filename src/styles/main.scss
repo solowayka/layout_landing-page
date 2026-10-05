@@ -26,10 +26,10 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: Cinzel, serif;
-  background: $bg-light;
   color: $black;
   line-height: 1.5;
-  padding-bottom: 80px;
+  padding-bottom: 280px;
+
 }
 
 p,
@@ -186,6 +186,7 @@ textarea {
   }
 
   .header__actions {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 24px;
@@ -193,14 +194,19 @@ textarea {
 
   .header__contact--preview {
     position: absolute;
-    right: 218px;
+    left: -222px;
+    padding-right: 50px;
     display: none;
-    padding: 0;
+  }
+
+  .header__contact--preview:hover {
+    display: block;
   }
 
   .header__phone:hover + .header__contact--preview {
     display: block;
   }
+
 
   .header__contact-title,
   .header__contact-phone {
@@ -216,11 +222,21 @@ textarea {
   }
 
   .header__contact-phone:hover {
+    color: $hover;
     opacity: 0.85;
   }
 }
 
 /* CONTAINER */
+
+.container,
+.section--hours,
+.gallery__grid,
+.section--explore,
+.section--contacts {
+  background: $white;
+}
+
 .container {
   width: 100%;
   max-width: none;
@@ -414,6 +430,7 @@ textarea {
   transform: scale(1.03);
   filter: brightness(1.08);
   background: $hover;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
@@ -627,7 +644,7 @@ textarea {
 /* FOOTER  */
 .footer {
   position: fixed;
-  height: 180px;
+  height: 280px;
   width: 100%;
   background:
     linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),

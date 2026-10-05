@@ -129,21 +129,19 @@
   }
 }
 
-#about-us {
+.menu__link[data-section="about-us"] {
   position: relative;
 }
 
-#about-us::after {
+.menu__link[data-section="about-us"]::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -2px;
-  width: 142px;
+  bottom: -16px;
+  width: 100%;
   height: 2px;
   background: $white;
 }
-
-
 
 
 @include media-mobile {

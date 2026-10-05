@@ -4,7 +4,6 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  max-width: $max-width;
   height: 100%;
   padding: 32px 120px 106px;
   background: $accent;
@@ -22,7 +21,8 @@
     position: sticky;
     top: 0;
     z-index: 1;
-    padding: 12px 0;
+    padding-top: 22px;
+    padding-bottom: 55px;
 
     @include flex-center(space-between, center);
 
@@ -37,30 +37,32 @@
     background: url('../images/icons/icon-close.png') center/contain no-repeat;
   }
 
-  &__nav {
-    display: grid;
-    gap: 28px;
-  }
+  // &__nav {
+  //   display: grid;
+  //   gap: 32px;
+  // }
 
   &__list {
     display: grid;
-    gap: 22px;
+    gap: 32px;
   }
 
   &__link {
     display: block;
     color: $white;
     font-family: Cinzel, serif;
-    font-size: clamp(1.3rem, 2vw, 2rem);
-    line-height: 1.1;
-    letter-spacing: 0.08em;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 22px;
+    line-height: 22px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 8px 12px;
     border-radius: 6px;
     transition:
       background-color $transition,
       transform $transition;
+
 
     &:hover {
       background: $hover;
@@ -98,22 +100,51 @@
   }
 
   &__call {
+    position: relative;
     display: inline-block;
     margin-top: 12px;
     padding-bottom: 5px;
-    border-bottom: 1px solid $white;
     font-family: Cinzel, serif;
     font-size: 1rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    text-decoration: none;
     color: $white;
   }
+
+  &__call::after {
+    content: "";
+    position: absolute;
+    width: 142px;
+    left: 0;
+    bottom: -3px;
+    height: 2px;
+    background: $white;
+  }
+
 
   &__call:hover,
   &__call:focus-visible {
     color: rgba(255, 255, 255, 0.8);
   }
 }
+
+#about-us {
+  position: relative;
+}
+
+#about-us::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 142px;
+  height: 2px;
+  background: $white;
+}
+
+
+
 
 @include media-mobile {
   .menu {
